@@ -19,3 +19,16 @@ int yyerror() {
 	printf("invalid grammer\n");
 	return 0;
 }	
+
+/* 
+anb
+	s: c B | B
+	c: A c | A
+anbn	
+	s: A s1 B
+	s1: A s1 B | ;
+abn
+	s: A s1 B | A
+	s1: s1 B |  ;
+	
+*/
