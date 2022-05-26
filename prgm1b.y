@@ -13,11 +13,13 @@ expr: expr '+' expr { $$ = $1+$3; }
 	| expr '-' expr { $$ = $1-$3; } 
 	| expr '*' expr { $$=$1*$3; } 
 	| expr '/' expr { if($3==0) { printf("infinity\n"); exit(0); } else { $$=$1/$3; } }
+	| '(' expr ')' { $$ = $2; }
+	| '-' expr { $$=-$2; }
 	| NUM { $$=$1; }
 	;
 %%
 int main() {
-	printf("Enter the Expession\n");
+	printf("Enter the Expession :");
 	yyparse();
 	return 0;
 }
