@@ -95,9 +95,18 @@ public class prgm07 {
 			}
 		}
 		for(int i=0;i<n;i++) {
-			
-			
-		
+			ta[i]=copy[i]+wt[i];
+		}
+		System.out.println("Process\t Turn around time\t Burst Time\t");
+		for(int i=0;i<n;i++)
+			System.out.println((i+1)+"\t\t"+ ta[i]+"\t\t"+copy[i]); 
+		for(int i=0;i<n;i++) {
+			ta[i]=wt[i]+copy[i];
+			avgwt+=wt[i];
+			avgta+=ta[i];
+		}
+		System.out.println("\nAverage waiting time:"+avgwt/n);
+		System.out.println("Average turn around time:"+avgta/n+"\n");
 	}
 	public static void main(String args[]) {
 		prgm07 obj= new prgm07();
